@@ -52,11 +52,11 @@ mv $build_dir/node-v$node_version-linux-x64 $build_dir/vendor/node
 chmod +x $build_dir/vendor/node/bin/*
 PATH=$PATH:$build_dir/vendor/node/bin
 
-# Update npm to the latest version
-npm install npm -g
-
 # Run subsequent node/npm commands from the build path
 cd $build_dir
+
+# Update npm to the latest version
+npm install npm -g
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
